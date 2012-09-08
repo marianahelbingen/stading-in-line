@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<section>
+  <h2><%= @place.name %></h2>
+</section>
+
+
+<section id="check-ins">
+  <% @check_ins.each do |check_in| %>
+
+  <progress value="<%= check_in.occupation %>" max="100"> <%= check_in.occupation %>%</progress><br />
+
+  <% if check_in.occupation == 100 %>
+	 <span>waiting time: <%= distance_of_time_in_words(check_in.waiting_time.minutes) %></span><br />
+  <% end %>
+
+  <span>posted <%= time_ago_in_words(check_in.created_at) %> ago</span><br />
+
+  <% end %>
+</section>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %> |
+<%= link_to 'Destroy', @place, method: :delete %>

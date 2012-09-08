@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>StandingInLine</title>
+  <title>Standing In Line</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<header>
+	<h1>Standing in line</h1>
+</header>
+
+<section class="content">
+	<%= yield %>
+</section>
 
 </body>
 </html>

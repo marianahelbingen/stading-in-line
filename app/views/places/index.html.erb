@@ -1,0 +1,20 @@
+<h1 class="main-title">What's hot now</h1>
+
+<ol> 
+  <% @places.each do |place| %>
+
+  <li> 
+    <h2><%= place.name %></h2>
+    
+    <%= link_to 'details', place %>
+
+  	<%= link_to "check in", [:new, place, :check_in] %>
+  </li>
+
+
+  <% end %>
+</ol>
+
+<br />
+
+<%= link_to "I can't find my place.", new_place_path, class: "new-place" %>
